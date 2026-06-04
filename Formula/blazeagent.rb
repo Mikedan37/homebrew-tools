@@ -1,4 +1,4 @@
-class Blaze < Formula
+class Blazeagent < Formula
   desc "Local-first AI coding agent with deterministic routing"
   homepage "https://github.com/Mikedan37"
   version "0.1.0"
