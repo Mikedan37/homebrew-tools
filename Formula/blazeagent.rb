@@ -6,15 +6,15 @@ class Blazeagent < Formula
   on_macos do
     on_arm do
       url "https://github.com/Mikedan37/blaze-releases/releases/download/v0.1.0/blaze-0.1.0-arm64-macos.tar.gz"
-      sha256 "6804b0c8266006b91aa4a399afa04fb6509d795873fed902aa4b627a0442a005"
+      sha256 "bc37f5d721aa6b98e94c44ec67e23d08094d32f585740d4d855f16899f5a07fc"
     end
   end
 
   def install
-    bin.install "bin/blaze"
-    bin.install "bin/blaze-daemon"
-    bin.install "bin/com.blaze.agentdaemon.plist"
-    bin.install "bin/blaze-post-install.sh"
+    bin.install "blaze"
+    bin.install "blaze-daemon"
+    bin.install "com.blaze.agentdaemon.plist"
+    bin.install "blaze-post-install.sh"
   end
 
   def post_install
@@ -36,6 +36,6 @@ class Blazeagent < Formula
   end
 
   test do
-    assert_match "blaze", shell_output("#{bin}/blaze --version")
+    assert_match "blaze", shell_output("#{bin}/blaze --help 2>&1", 0)
   end
 end
